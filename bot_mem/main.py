@@ -2,6 +2,12 @@
 import asyncio
 import logging
 import sys
+from pathlib import Path
+
+# Add project root to path so "common" is importable when running this file directly
+_root = Path(__file__).resolve().parent.parent
+if str(_root) not in sys.path:
+    sys.path.insert(0, str(_root))
 
 from aiogram import Bot, Dispatcher
 
